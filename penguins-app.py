@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 # st.polyfill('BigInt64Array')
 
-streamlit.set_page_config(
+st.set_page_config(
     page_title="Penguin Classifier App",
     page_icon="lter_penguins.png",
     layout="wide",
