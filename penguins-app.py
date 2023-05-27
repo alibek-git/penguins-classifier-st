@@ -2,7 +2,14 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+from PIL import Image
 from sklearn.ensemble import RandomForestClassifier
+
+# st.polyfill('BigInt64Array')
+
+image = Image.open('lter_penguins.png')
+
+st.image(image, use_column_width=True)
 
 st.write("""
 # Penguin Prediction App
