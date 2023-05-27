@@ -7,6 +7,13 @@ from sklearn.ensemble import RandomForestClassifier
 
 # st.polyfill('BigInt64Array')
 
+streamlit.set_page_config(
+    page_title="Penguin Classifier App",
+    page_icon="lter_penguins.png",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 image = Image.open('lter_penguins.png')
 
 st.image(image, use_column_width=True)
@@ -85,3 +92,19 @@ st.write(penguins_species[prediction])
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
+
+if __name__ == '__main__':
+    main()
+    
+    # Add CSS stylesheet
+    st.markdown(
+        """
+        <style>
+        .reportview-container {
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='none'%3E%3C/rect%3E%3Ccircle cx='50' cy='50' r='40' fill='%23your-color'/%3E%3C/svg%3E") no-repeat center center fixed;
+            background-size: cover;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
